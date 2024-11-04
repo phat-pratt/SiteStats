@@ -5,7 +5,6 @@ from collections import Counter
 from datetime import datetime
 import json
 import os
-import time  # Added for rate limiting
 
 nltk.download("punkt")
 nltk.download("stopwords")
@@ -212,7 +211,6 @@ def main():
             text = tracker.extract_text(html)
             word_counts = tracker.process_text(text)
             all_words.update(word_counts)
-            # time.sleep(2)  # Be polite with requests
 
     # Save and display results
     if all_words:
