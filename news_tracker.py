@@ -164,43 +164,56 @@ class NewsTracker:
 def main():
     # Initialize tracker
     tracker = NewsTracker()
-
-    # Start with a smaller set of more reliable news sites
-    urls = [
-        "https://www.nytimes.com/",  # Replace with real URLs
-        "https://www.wsj.com/",
-        "https://news.ycombinator.com/",
-        "https://www.cnn.com/",
-        "https://www.bbc.com/",
-        # "https://www.reuters.com/",
-        "https://www.theguardian.com/",
-        "https://www.aljazeera.com/",
-        "https://www.npr.org/",
-        "https://www.bloomberg.com/",
-        "https://www.economist.com/",
-        "https://www.ft.com/",
-        "https://www.nbcnews.com/",
-        "https://www.usatoday.com/",
-        "https://www.latimes.com/",
-        "https://www.chicagotribune.com/",
-        # "https://www.washingtonpost.com/",
-        "https://www.foxnews.com/",
-        "https://www.huffpost.com/",
-        "https://www.politico.com/",
-        "https://www.apnews.com/",
-        "https://www.axios.com/",
-        "https://www.buzzfeednews.com/",
-        "https://www.vice.com/",
-        "https://www.msnbc.com/",
-        "https://www.bbc.co.uk/news",
-        "https://www.thetimes.co.uk/",
-        "https://www.telegraph.co.uk/",
-        "https://www.independent.co.uk/",
-        "https://www.mirror.co.uk/",
-        "https://www.express.co.uk/",
-        "https://www.dailymail.co.uk/",
-        "https://www.thesun.co.uk/",
-    ]
+    urls = list(
+        set(
+            [
+                "https://www.nytimes.com/",
+                "https://www.wsj.com/",
+                "https://news.ycombinator.com/",
+                "https://www.cnn.com/",
+                "https://www.bbc.com/",
+                "https://www.theguardian.com/",
+                "https://www.aljazeera.com/",
+                "https://www.npr.org/",
+                "https://www.bloomberg.com/",
+                "https://www.economist.com/",
+                "https://www.ft.com/",
+                "https://www.nbcnews.com/",
+                "https://www.usatoday.com/",
+                "https://www.latimes.com/",
+                "https://www.chicagotribune.com/",
+                "https://www.nydailynews.com/",
+                "https://www.newsweek.com/",
+                "https://www.businessinsider.com/",
+                "https://www.thedailybeast.com/",
+                "https://www.foxnews.com/",
+                "https://www.nationalreview.com/",
+                "https://www.realclearpolitics.com/",
+                "https://www.drudgereport.com/",
+                "https://www.thedailywire.com/",
+                "https://www.breitbart.com/",
+                "https://www.huffpost.com/",
+                "https://www.politico.com/",
+                "https://www.apnews.com/",
+                "https://www.axios.com/",
+                "https://www.buzzfeednews.com/",
+                "https://www.vice.com/",
+                "https://www.msnbc.com/",
+                "https://www.salon.com/",
+                "https://www.slate.com/",
+                "https://www.vox.com/",
+                "https://www.theguardian.com/",
+                "https://www.bbc.co.uk/news",
+                "https://www.thetimes.co.uk/",
+                "https://www.telegraph.co.uk/",
+                "https://www.independent.co.uk/",
+                "https://www.mirror.co.uk/",
+                "https://www.express.co.uk/",
+                "https://www.dailymail.co.uk/",
+                "https://www.thesun.co.uk/",
+            ]
+        )
+    )
 
     # Process each URL
     all_words = Counter()
